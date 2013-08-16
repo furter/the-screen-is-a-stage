@@ -1,4 +1,4 @@
-Specimen
+The screen is a stage
 ========
 
-Wordpress theme of the digital type specimen site, Specimen
+Wordpress theme of the website http://the-screen-is-a-stage.net/

@@ -1,9 +1,8 @@
 <?php
-/**
- * The template for displaying the home/index page.
- * This template will also be called in any case where the Wordpress engine 
- * doesn't know which template to use (e.g. 404 error)
- */
+/*
+Template Name: About
+*/
+
 
 get_header(); // This fxn gets the header.php file and renders it ?>
     <div id="primary" class="row-fluid">
@@ -21,27 +20,19 @@ get_header(); // This fxn gets the header.php file and renders it ?>
                     <article class="post">
                     
                         <div class="browser">
-                            <div class="browser-tab"><?php echo '<div class="favicon">' . get_post_meta( get_the_ID(), 'favicon', TRUE ) . '</div>'; ?><?php echo '<div class="tab-title">' . get_post_meta( get_the_ID(), 'tab-text', TRUE ) . '</div>'; ?><img src="<?php echo get_template_directory_uri(); ?>/fadeout.png" style="position: absolute; top: 0px; right: 0">
-                                </div>
+                            <div class="browser-tab"><?php echo '<div class="favicon">' . get_post_meta( get_the_ID(), 'favicon', TRUE ) . '</div>'; ?><?php echo '<div class="tab-title">' . get_post_meta( get_the_ID(), 'tab-text', TRUE ) . '</div>'; ?></div>
                             <div class="dropt-info" style="position: relative; float: left; margin: 8px 0px 0px 12px; font-family: RobotoLight; font-size: 17px"><div><?php echo get_post_meta( get_the_ID(), 'info', TRUE ); ?></div>+</div>
-                            <div style="position: absolute; top: 6px; right: 15px; font-size: 16px"><a href="/about">A</a></div>
+                            <div style="position: absolute; top: 6px; right: 15px; font-size: 16px">About</div>
                             <div class="browser-bar">
-                                <div style="position: absolute; left: 20px; top: 12px; font-size: 17px; color: cyan">
-                                    <?php previous_post_link('%link', '←'); ?>
+                                <div style="position: absolute; left: 20px; top: 12px; font-size: 17px; color: #E8E8E8 ">
+                                    ←
                                 </div>
-                                <div style="position: absolute; left: 55px; top: 12px; font-size: 17px; color: cyan">
-                                    <?php next_post_link('%link', '→'); ?>
+                                <div style="position: absolute; left: 55px; top: 12px; font-size: 17px; color: #E8E8E8 ">
+                                    →
                                 </div>
-                                <div class="browser-url"><a href="<?php the_title(); ?>" target="blank"><?php the_title(); // Show the title of the posts ?></a></div>
+                                <div class="browser-url"><a href="<?php the_title(); ?>"><?php the_title(); // Show the title of the posts ?></a></div>
                             </div>
-                            <div class="the-content dropt" id="scroll">
-                                <?php $reviews = get_post_meta( get_the_ID(), 'review' ); 
-                                    if (!empty($reviews)):
-                                        foreach($reviews as $key => $val) {
-                                            echo $val;
-                                        }
-                                    endif; ?>
-                                
+                            <div style="position: relative; float: left; height: 600px">
                                 <?php the_content( 'Continue...' ); 
                                 // This call the main content of the post, the stuff in the main text box while composing.
                                 // This will wrap everything in p tags and show a link as 'Continue...' where/if the

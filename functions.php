@@ -61,3 +61,10 @@ function naked_scripts()  {
   
 }
 add_action( 'wp_enqueue_scripts', 'naked_scripts' ); // Register this fxn and allow Wordpress to call it automatcally in the header
+
+
+function attachment_default_settings() {
+    update_option('image_default_link_type', '' );
+    update_option('image_default_size', 'large' );
+}
+add_action('after_setup_theme', 'attachment_default_settings');
